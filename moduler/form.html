@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Form</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <form>
+      <!-- 1st row -->
+        <div class="row form-group">
+          <div class="col-sm-2">
+            <input type="search" class="form-control" placeholder="IssueID">
+          </div>
+          <div class="col-sm-5">
+            <input type="search" class="form-control" placeholder="Kunde">
+          </div>
+          <div class="col-sm-5">
+            <input type="search" class="form-control" placeholder="Projekt">
+          </div>
+        </div>
+        <!-- 2nd row -->
+        <div class="row form-group">
+          <div class="col-sm-6">
+            <input type="search" class="form-control" placeholder="Navn">
+          </div>
+          <div class="col-sm-3">
+            <input type="time" class="form-control">
+          </div>
+          <div class="col-sm-3">
+            <input type="time" class="form-control">
+          </div>
+        </div>
+        <!-- 3rd row -->
+        <div class="row form-group">
+          <div class="col-sm-4">
+            <input type="text" class="form-control" placeholder="Label">
+          </div>
+          <div class="col-sm-4">
+            <label>Fakturerbar: </label>
+          <input class="" type="checkbox" checked data-toggle="toggle" data-on="Ja" data-off="Nej" data-onstyle="primary" data-offstyle="warning">
+
+          </div>
+        </div>
+        <!-- 4rh row --> 
+        <div class="row form-group">
+          <div class="col-sm-4">
+            <label>Ekstern kommentar</label>
+            <textarea class="form-control"></textarea>
+          </div>
+          <div class="col-sm-4">
+            <label>Intern kommentar</label>
+            <textarea class="form-control"></textarea>
+          </div>
+        </div>
+        <!-- 5th row -->
+        <div class="row form-group">
+          <div class="col-sm-12">
+            <button class="btn btn-success form-control">
+              Gem/Start timer
+           </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+  </body>
+</html>
