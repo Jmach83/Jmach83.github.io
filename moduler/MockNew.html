@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+
+    .row.content {
+      height: 1500px
+    }
+    /* Set gray background color and 100% height */
+
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    /* Set black background color, white text and some padding */
+
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    /* On small screens, set height to 'auto' for sidenav and grid */
+
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {
+        height: auto;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+          aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        <a class="navbar-brand" href="#">Alpha-Solutions</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+          <li><a href="#">Link</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+        <p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">Mia Ryvard</a></p>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+  </nav>
+
+  <div class="container">
+    <div class="row content">
+      <!--Side bar-->
+      <div class="col-sm-3 sidenav">
+
+        <div class="row">
+
+          <img src="./pics/alpha-logo.png">
+
+        </div>
+
+        <div class="row space-2">
+
+          <button id="addTime" class="btn btn-sidebar btn-primary glyphicon">+</button>
+
+        </div>
+
+        <div class="row space">
+
+          <button class="btn btn-primary btn-sidebar">Favorit</button>
+
+        </div>
+
+        <div class="row space">
+
+          <button class="btn btn-primary btn-sidebar">Favorit</button>
+
+        </div>
+
+        <div class="row space">
+
+          <button class="btn btn-primary btn-sidebar">Favorit</button>
+
+        </div>
+
+        <div class="row space dropdown">
+
+          <center><input id="templateSearch" type="search" class="dropdown-toggle form-control btn-sidebar" data-toggle="dropdown"
+              placeholder="Template">
+
+            <ul class="dropdown-menu">
+
+              <li><a href="#">HTML<span class="pull-right">☆</span></a></li>
+
+              <li><a href="#">CSS<span class="pull-right">☆</span></a></li>
+
+              <li><a href="#">JavaScript<span class="pull-right">☆</span></a></li>
+
+            </ul>
+
+          </center>
+
+        </div>
+
+        <br>
+        <row>
+          <button class="btn btn-primary btn-block btn-lg"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+        </row>
+        <br>
+        <row>
+          <button class="btn btn-default btn-block btn-xs"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Ferie</button>
+          <button class="btn btn-default btn-block btn-xs"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Frokost</button>
+          <button class="btn btn-default btn-block btn-xs"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Favorit x</button>
+        </row>
+
+      </div>
+
+      <div class="col-sm-9">
+
+        <div class="row">
+          <div class="col-xs-4">
+            <h4>Tirsdag d. 7 august 2017</h4>
+          </div>
+          <div class="col-xs-3">
+            <input class="form-control" type="date">
+          </div>
+          <div class="col-xs-3">
+            <div class="btn-group pull-right">
+              <button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></button>
+              <button class="btn btn-default btn-sm">I dag</button>
+              <button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></button>
+            </div>
+          </div>
+          <div class="col-xs-2">
+            <div class="btn-group">
+              <button class="btn btn-default btn-sm">Dag</button>
+              <button class="btn btn-default btn-sm">Uge</button>
+            </div>
+          </div>
+
+        </div>
+        <div class="row">
+          <!--Table-->
+          <table class="table table-responsive">
+            <thead>
+              <tr class="table-bordered">
+
+                <div class="btn-group">
+                  <th><button type="button" class="btn btn-default btn-block active"><strong>Mandag</strong><br>04:00</button></th>
+                  <th><button type="button" class="btn btn-default btn-block"><strong>Tirsdag</strong><br>00:00</button></th>
+                  <th><button type="button" class="btn btn-default btn-block"><strong>Onsdag</strong><br>00:00</button></th>
+                  <th><button type="button" class="btn btn-default btn-block"><strong>Torsdag</strong><br>00:00</button></th>
+                  <th><button type="button" class="btn btn-default btn-block"><strong>Fredag</strong><br>00:00</button></th>
+                  <th><button type="button" class="btn btn-default btn-block"><strong>Lørdag</strong><br>00:00</button></th>
+                  <th><button type="button" class="btn btn-default btn-block"><strong>Søndag</strong><br>00:00</button></th>
+                </div>
+              </tr>
+              <tr>
+
+              </tr>
+            </thead>
+            <tbody class="table-bordered">
+              <!--table row 1: time registration view-->
+              <tr>
+                <td colspan="7">
+                  <div class="row">
+                    <!--Klient, projekt, labels-->
+                    <div class="col-sm-4">
+                      <strong>Klient</strong> <small>projekt</small><br>
+                      <label class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> label 1</label>
+                    </div>
+                    <!--task-->
+                    <div class="col-sm-2">
+                      <small>Task</small>
+                    </div>
+                    <!--comments-->
+                    <div class="col-sm-2">
+                      <div>
+                        <a href="#" rel="popover" data-trigger="hover" data-popover-content="#myPopover"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span></a>
+                        <div id="myPopover" class="hide">
+                          <ul class="list-group">
+                            <li class="list-group-item">
+                              <h4 class="list-group-item-heading">
+                                <h4>Ekstern</h4>
+                                <p class="list-group-item-text">note vlbsd sdfsdf sdf sdfsdf sdfsdf sdfsf</p>
+                            </li>
+                            <li class="list-group-item">
+                              <h4 class="list-group-item-heading">
+                                <h4>Intern</h4>
+                                <p class="list-group-item-text">dsf sdf sdfsdf sdfdfs sderrg sdfsddf sdgfds</p>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <!--stop tid-->
+                    <div class="col-xs-1">
+                      <!-- <button class="btn btn-danger"><span class="glyphicon glyphicon-stop" aria-hidden="true"></span></button> -->
+                    </div>
+                    <!--Tid-->
+                    <div class="col-sm-2 text-right">
+                      <strong>1t 36m</strong>
+                      <br>
+                      <small>11:30 - 13:06</small>
+                    </div>
+                    <!--edit-->
+                    <div class="col-sm-1">
+                      <button class="btn btn-default pull-right"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
+                    </div>
+                  </div>
+                </td>
+
+              </tr>
+              <!--table row 2: time registration view-->
+              <tr>
+                <td colspan="7">
+                  <div class="row">
+                    <!--Klient, projekt, labels-->
+                    <div class="col-sm-4">
+                      <strong>Klient</strong> <small>projekt</small><br>
+                      <label class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> label 1</label>
+                    </div>
+                    <!--task-->
+                    <div class="col-sm-2">
+                      <small>Task</small>
+                    </div>
+                    <!--comments-->
+                    <div class="col-sm-2">
+                      <div>
+                        <a href="#" rel="popover" data-trigger="hover" data-popover-content="#myPopover"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span></a>
+                        <div id="myPopover" class="hide">
+                          <ul class="list-group">
+                            <li class="list-group-item">
+                              <h4 class="list-group-item-heading">
+                                <h4>Ekstern</h4>
+                                <p class="list-group-item-text">note vlbsd sdfsdf sdf sdfsdf sdfsdf sdfsf</p>
+                            </li>
+                            <li class="list-group-item">
+                              <h4 class="list-group-item-heading">
+                                <h4>Intern</h4>
+                                <p class="list-group-item-text">dsf sdf sdfsdf sdfdfs sderrg sdfsddf sdgfds</p>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <!--stop tid-->
+                    <div class="col-xs-1">
+                      <!-- <button class="btn btn-danger"><span class="glyphicon glyphicon-stop" aria-hidden="true"></span></button> -->
+                    </div>
+                    <!--Tid-->
+                    <div class="col-sm-2 text-right">
+                      <strong>1t 36m</strong>
+                      <br>
+                      <small>11:30 - 13:06</small>
+                    </div>
+                    <!--edit-->
+                    <div class="col-sm-1">
+                      <button class="btn btn-default pull-right"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
+                    </div>
+                  </div>
+                </td>
+
+              </tr>
+              <!--table row 3: time registration view with stop button-->
+              <tr class="active">
+                <td colspan="7">
+                  <div class="row">
+                    <!--Klient, projekt, labels-->
+                    <div class="col-sm-4">
+                      <strong>Klient</strong> <small>projekt</small><br>
+                      <label class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> label 1</label>
+                      <label class="label label-primary"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span> label 1</label>
+                    </div>
+                    <!--task-->
+                    <div class="col-sm-2">
+                      <small>Task</small>
+                    </div>
+                    <!--comments-->
+                    <div class="col-sm-2">
+                      <div>
+                        <a href="#" rel="popover" data-trigger="hover" data-popover-content="#myPopover"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span></a>
+                        <div id="myPopover" class="hide">
+                          <ul class="list-group">
+                            <li class="list-group-item">
+                              <h4 class="list-group-item-heading">
+                                <h4>Ekstern</h4>
+                                <p class="list-group-item-text">note vlbsd sdfsdf sdf sdfsdf sdfsdf sdfsf</p>
+                            </li>
+                            <li class="list-group-item">
+                              <h4 class="list-group-item-heading">
+                                <h4>Intern</h4>
+                                <p class="list-group-item-text">dsf sdf sdfsdf sdfdfs sderrg sdfsddf sdgfds</p>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <!--stop tid-->
+                    <div class="col-sm-1">
+                      <button class="btn btn-danger"><span class="glyphicon glyphicon-stop" aria-hidden="true"></span></button>
+                    </div>
+                    <!--Tid-->
+                    <div class="col-sm-2 text-right">
+
+                      <strong>1t 36m</strong>
+                      <br>
+                      <small>11:30 - ??:??</small>
+
+                    </div>
+                    <!--edit-->
+                    <div class="col-sm-1">
+                      <button class="btn btn-default pull-right"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <footer class="container-fluid">
+      <p>Footer Text</p>
+    </footer>
+
+    <!-- pupover-->
+    <script>
+      $(document).ready(function () {
+        $('[data-toggle="popover"]').popover();
+      });
+
+      $(function () {
+        $('[rel="popover"]').popover({
+          container: 'body',
+          html: true,
+          content: function () {
+            var clone = $($(this).data('popover-content')).clone(true).removeClass('hide');
+            return clone;
+          }
+        }).click(function (e) {
+          e.preventDefault();
+        });
+      });
+    </script>
+
+</body>
+
+</html>
