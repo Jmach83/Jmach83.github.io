@@ -1,0 +1,27 @@
+.border {
+    border: solid 2px black;
+}
+
+table td {
+    border: solid 1px lightgray;
+}
+
+#cal-table tr td {
+    width: 14%;
+    height: 75px;
+    
+    
+}
+
+.time-text {
+    font-size: 12px;
+    color: lightgray;
+}
+
+.booked {
+    background-color: dodgerblue;
+    color: white;
+    border: 1px solid dodgerblue;
+    
+    
+}
