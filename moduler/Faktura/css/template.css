@@ -1,0 +1,12 @@
+.grid{
+	display: grid;	
+	grid-row-gap: 2em;
+}
+
+.grid > div:nth-child(odd) {
+	background: #eee; 
+}
+
+.grid >divnth-child(even) {
+	background: #ddd;
+}
