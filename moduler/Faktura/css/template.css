@@ -2,6 +2,7 @@
 	display: grid;	
 	grid-row-gap: 2em;
 	grid-auto-rows: minmax(200px, auto);
+	border: 1px solid black;
 	margin: 6%;
 }
 
@@ -9,21 +10,24 @@
 	background: #eee; 
 }
 
-.grid >div:nth-child(even) {
+.grid > div:nth-child(even) {
 	background: #ddd;
 }
 
-.subgrid >div {
+.subgrid {
 	display: grid;	
 	grid-row-gap: 2em;
 	grid-auto-rows: minmax(auto, 100px);
-	margin: 6%;	
+}
+
+.subgrid > div {
+	border: solid black;
 }
 
 .subgrid > div:nth-child(odd) {
 	background: #bbb; 
 }
 
-.subgrid >div:nth-child(even) {
+.subgrid > div:nth-child(even) {
 	background: #ccc;
 }
