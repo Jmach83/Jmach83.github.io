@@ -1,12 +1,29 @@
 .grid{
 	display: grid;	
 	grid-row-gap: 2em;
+	grid-auto-rows: minmax(200px, auto);
+	margin: 6%;
 }
 
 .grid > div:nth-child(odd) {
 	background: #eee; 
 }
 
-.grid >divnth-child(even) {
+.grid >div:nth-child(even) {
 	background: #ddd;
+}
+
+.subgrid >div {
+	display: grid;	
+	grid-row-gap: 2em;
+	grid-auto-rows: minmax(auto, 100px);
+	margin: 6%;	
+}
+
+.subgrid > div:nth-child(odd) {
+	background: #bbb; 
+}
+
+.subgrid >div:nth-child(even) {
+	background: #ccc;
 }
