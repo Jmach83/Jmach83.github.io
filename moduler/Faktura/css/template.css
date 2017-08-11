@@ -1,9 +1,13 @@
-.grid{
+.grid {
 	display: grid;	
 	grid-row-gap: 2em;
 	grid-auto-rows: minmax(200px, auto);
-	border: 1px solid black;
-	margin: 6%;
+	border: 2px solid black;
+	margin: 4%;
+}
+
+.grid > div {
+	border: solid black;
 }
 
 .grid > div:nth-child(odd) {
