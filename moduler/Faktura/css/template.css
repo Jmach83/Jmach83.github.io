@@ -1,9 +1,53 @@
 .grid {
 	display: grid;	
-	grid-row-gap: 2em;
-	grid-auto-rows: minmax(200px, auto);
+	grid-template-columns: 1fr 10fr 1fr;
+
+	grid-template-areas: 
+	"nav nav nav"
+	". kunde ."
+	". timer ."
+	". udgifter ."
+	". indhold ."
+	"footer footer footer";
+
 	border: 2px solid black;
-	margin: 4%;
+	grid-gap: 10px;
+}
+
+.nav {
+	grid-area: nav;
+}
+
+.kunde {
+	grid-area: kunde;
+}
+
+.timer {
+	grid-area: timer;
+}
+
+.udgifter {
+	grid-area: udgifter;
+}
+
+.indhold {
+	grid-area: indhold;
+}
+
+.header {
+	grid-area: header;
+}
+
+.linier {
+	grid-area: linier;
+}
+
+.note {
+	grid-area: note;
+}
+
+.footer {
+	grid-area: footer;
 }
 
 .grid > div {
@@ -19,9 +63,15 @@
 }
 
 .subgrid {
-	display: grid;	
-	grid-row-gap: 2em;
-	grid-auto-rows: minmax(auto, 100px);
+	display: grid;
+	grid-template-columns: 1fr 10fr 1fr;
+	grid-template-areas: 
+	". . ."
+	". header ."
+	". linier ."
+	". note. ";
+
+	grid-gap: 5px;
 }
 
 .subgrid > div {
