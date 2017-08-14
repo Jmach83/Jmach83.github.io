@@ -1,12 +1,171 @@
-.grid{
+.grid {
 	display: grid;	
-	grid-row-gap: 2em;
+	
+	grid-template-areas: 
+	"nav"
+	"kunde"
+	"timer"
+	"udgifter"
+	"indhold"
+	"footer";
+
+	border: 2px solid black;
+	grid-gap: 10px;
+}
+
+.nav {
+	grid-area: nav;
+}
+
+.kunde {
+	grid-area: kunde;
+}
+
+.timer {
+	display: grid;
+	grid-template-columns: 2fr 1fr 3fr 5fr;
+	grid-area: timer;
+	grid-template-areas: 
+	"invHours . hoursOpt ."
+	"invType . invTypeOpt ."
+}
+
+
+#invHours {
+	padding-top: 20px;
+	grid-area: invHours;
+}
+
+ #invType {
+	 grid-area: invType;
+ }
+
+ #hoursOpt {
+	 padding-top: 20px;
+	 grid-area: hoursOpt;
+ }
+
+#invTypeOpt {
+	grid-area: invTypeOpt;
+}
+
+.udgifter {
+	grid-area: udgifter;
+}
+
+.indhold {
+	grid-area: indhold;
+}
+
+.header {
+	grid-area: header;
+}
+
+.linier {
+	grid-area: linier;
+}
+
+.note {
+	grid-area: note;
+}
+
+.footer {
+	grid-area: footer;
+}
+
+.grid > div {
+	border: solid black;
 }
 
 .grid > div:nth-child(odd) {
 	background: #eee; 
 }
 
-.grid >divnth-child(even) {
+.grid > div:nth-child(even) {
 	background: #ddd;
+}
+
+.subgrid {
+	display: grid;
+	grid-template-areas: 
+	"."
+	"header"
+	"linier"
+	"note";
+
+	grid-gap: 5px;
+}
+
+.subgrid > div {
+	border: solid black;
+}
+
+.subgrid > div:nth-child(odd) {
+	background: #bbb; 
+}
+
+.subgrid > div:nth-child(even) {
+	background: #ccc;
+}
+
+@media screen and (min-width: 736px) {
+	.grid {
+	display: grid;	
+	grid-template-columns: 1fr 10fr 1fr;
+
+	grid-template-areas: 
+	"nav nav nav"
+	". kunde ."
+	". timer ."
+	". udgifter ."
+	". indhold ."
+	"footer footer footer";
+
+	border: 2px solid black;
+	grid-gap: 10px;
+}
+
+.subgrid {
+	display: grid;
+	grid-template-columns: 1fr 10fr 1fr;
+	grid-template-areas: 
+	". . ."
+	". header ."
+	". linier ."
+	". note. ";
+
+	grid-gap: 5px;
+}
+
+   .btnText {
+        text-align: left !important;
+    }
+
+    .btnCheck {
+        color: green;
+    }
+
+    #collapse1 {
+        padding-top: 15px;
+        padding-bottom: 20px;
+    }
+
+    #date {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .grid {
+        background-color: white;
+    }
+
+    #invType {
+        padding-left: 50px;
+        padding-top: 20px;
+    }
+
+    #invTypeOpt {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
 }
