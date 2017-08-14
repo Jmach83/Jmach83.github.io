@@ -1,12 +1,115 @@
-.grid{
+.grid {
 	display: grid;	
-	grid-row-gap: 2em;
+	
+	grid-template-areas: 
+	"nav"
+	"kunde"
+	"timer"
+	"udgifter"
+	"indhold"
+	"footer";
+
+	border: 2px solid black;
+	grid-gap: 10px;
+}
+
+.nav {
+	grid-area: nav;
+}
+
+.kunde {
+	grid-area: kunde;
+}
+
+.timer {
+	grid-area: timer;
+}
+
+.udgifter {
+	grid-area: udgifter;
+}
+
+.indhold {
+	grid-area: indhold;
+}
+
+.header {
+	grid-area: header;
+}
+
+.linier {
+	grid-area: linier;
+}
+
+.note {
+	grid-area: note;
+}
+
+.footer {
+	grid-area: footer;
+}
+
+.grid > div {
+	border: solid black;
 }
 
 .grid > div:nth-child(odd) {
 	background: #eee; 
 }
 
-.grid >divnth-child(even) {
+.grid > div:nth-child(even) {
 	background: #ddd;
+}
+
+.subgrid {
+	display: grid;
+	grid-template-areas: 
+	"."
+	"header"
+	"linier"
+	"note";
+
+	grid-gap: 5px;
+}
+
+.subgrid > div {
+	border: solid black;
+}
+
+.subgrid > div:nth-child(odd) {
+	background: #bbb; 
+}
+
+.subgrid > div:nth-child(even) {
+	background: #ccc;
+}
+
+@media screen and (min-width: 736px) {
+	.grid {
+	display: grid;	
+	grid-template-columns: 1fr 10fr 1fr;
+
+	grid-template-areas: 
+	"nav nav nav"
+	". kunde ."
+	". timer ."
+	". udgifter ."
+	". indhold ."
+	"footer footer footer";
+
+	border: 2px solid black;
+	grid-gap: 10px;
+}
+
+.subgrid {
+	display: grid;
+	grid-template-columns: 1fr 10fr 1fr;
+	grid-template-areas: 
+	". . ."
+	". header ."
+	". linier ."
+	". note. ";
+
+	grid-gap: 5px;
+}
 }
