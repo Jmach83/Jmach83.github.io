@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faktura</title>
     <link rel="stylesheet" href="css/template.css">
+    <link rel="stylesheet" href="css/fakturaTimer.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -14,33 +15,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 
 </head>
-<style>
-    .btnText {
-        text-align: left;
-    }
 
-    .btnCheck {
-        color: green;
-    }
-
-    #collapse1 {
-        padding-top: 15px;
-        padding-bottom: 20px;
-    }
-
-    #date {
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
-
-    .grid {
-        background-color: white;
-    }
-
-    #fakType {
-        padding-left: 50px;
-    }
-</style>
+ 
 <!--
 Udgifter:
     - eksklusiv udgifter, 
@@ -58,7 +34,7 @@ Udgifter:
  -->
 
 <body>
-    <div class="grid" style="background-color: none;">
+    <div class="grid">
         <div>
             <div class="col-xs-2">2. Fakturerbarer timer:</div>
             <div class="btn-group col-xs-3">
@@ -121,18 +97,7 @@ Udgifter:
     $('.btnClicked').click(function () {
         $(this).find('span').toggleClass('btn glyphicon glyphicon-ok').toggleClass('btn');
     });
-    $('.showDate').click(function () {
-        $('#date').removeClass('hidden');
-    })
 
-    /*
-    $('#btnClicked').click(function () {
-        console.log('test');
-        $('#btnClicked').addClass('glyphicon glyphicon-ok');
-        //.toggle('1000');
-        //$("button", this).toggleClass('glyphicon glyphicon-ok');
-    })
-    */
 
 </script>
 

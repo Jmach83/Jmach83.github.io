@@ -1,28 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Faktura</title>
 	<link rel="stylesheet" href="css/template.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- select2 -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+
+
 </head>
+
 <body>
 	<div class="grid">
 		<div class="nav">
-			Nav	
+			Nav
 		</div>
 		<div class="kunde">
 			Kunde
 		</div>
 		<div class="timer">
-			Timer
+			<div id="invHours">2. Fakturerbarer timer:</div>
+
+			<div id="hoursOpt" class="btn-group">
+				<div class="btnClicked">
+					<button class="btn btn-default btn-block btnText">Alle ikke-fakturerede fakturerbare timer<span class="pull-right btnCheck" value="0"></span></button>
+				</div>
+				<div class="btnClicked">
+					<button class="btn btn-default btn-block btnText" data-toggle="collapse" data-target="#collapse1">Inkludér ikke-faktureret fakturerbarer timer fra:<span class="pull-right btnCheck"></span></button>
+				</div>
+
+				<div id="collapse1" class="panel-collapse collapse">
+					<select id="periodSelect" class="form-control">
+                            <option value="month">Denne måned</option>
+                            <option value="lastMonth">Sidste måned</option>
+                            <option value="quater">Dette kvartal</option>
+                            <option value="lasQuater">Sidste kvartal</option>
+                            <option value="year">Dette år</option>
+                            <option value="lastYear">Sidste år</option>
+                            <option value="custom">Brugerdefineret</option>
+                        </select>
+
+					<div id="date" class="hidden">
+						Fra: <input class="form-control" type="date" placeholder="Dato"></input>
+						Til: <input class="form-control" type="date" placeholder="Dato"></input>
+					</div>
+				</div>
+				<div class="btnClicked">
+					<button class="btn btn-default btn-block btnText">Ikke inkluder timer<span class="pull-right btnCheck"></span></button>
+				</div>
+
+			</div>
+			<div id="invType">Faktura type:</div>
+			<div id="invTypeOpt" class="btn-group">
+				<div>Sortér efter:</div>
+				<select class="js-example-basic-multiple btn-block" multiple="multiple">
+                    <option>Projekt</option>
+                    <option>Medarbejder</option>
+                    <option>Task</option>
+                    <option>Label</option>
+                </select>
+			</div>
 		</div>
 		<div class="udgifter">
 			Udgifter
 		</div>
 		<div class="indhold subgrid">
 			Indhold
-			<div class="header">			
+			<div class="header">
 				Header
 			</div>
 			<div class="linier">
@@ -37,4 +85,29 @@
 		</div>
 	</div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+<script>
+	$(document).ready(function () {
+		$(".js-example-basic-multiple").select2();
+	});
+
+	$('#periodSelect').on('change', function () {
+		if (this.value == 'custom') {
+			$("#date").removeClass('hidden');
+		}
+		else {
+			$("#date").addClass('hidden');
+		}
+	});
+
+
+	$('.btnClicked').click(function () {
+		$('.btnClicked').find('span').removeClass('btn glyphicon glyphicon-ok');
+		$(this).find('span').toggleClass('btn glyphicon glyphicon-ok').toggleClass('btn');
+	});
+
+</script>
+
 </html>
