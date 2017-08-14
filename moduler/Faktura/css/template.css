@@ -1,14 +1,13 @@
 .grid {
 	display: grid;	
-	grid-template-columns: 1fr 10fr 1fr;
-
+	
 	grid-template-areas: 
-	"nav nav nav"
-	". kunde ."
-	". timer ."
-	". udgifter ."
-	". indhold ."
-	"footer footer footer";
+	"nav"
+	"kunde"
+	"timer"
+	"udgifter"
+	"indhold"
+	"footer";
 
 	border: 2px solid black;
 	grid-gap: 10px;
@@ -64,12 +63,11 @@
 
 .subgrid {
 	display: grid;
-	grid-template-columns: 1fr 10fr 1fr;
 	grid-template-areas: 
-	". . ."
-	". header ."
-	". linier ."
-	". note. ";
+	"."
+	"header"
+	"linier"
+	"note";
 
 	grid-gap: 5px;
 }
@@ -84,4 +82,34 @@
 
 .subgrid > div:nth-child(even) {
 	background: #ccc;
+}
+
+@media screen and (min-width: 736px) {
+	.grid {
+	display: grid;	
+	grid-template-columns: 1fr 10fr 1fr;
+
+	grid-template-areas: 
+	"nav nav nav"
+	". kunde ."
+	". timer ."
+	". udgifter ."
+	". indhold ."
+	"footer footer footer";
+
+	border: 2px solid black;
+	grid-gap: 10px;
+}
+
+.subgrid {
+	display: grid;
+	grid-template-columns: 1fr 10fr 1fr;
+	grid-template-areas: 
+	". . ."
+	". header ."
+	". linier ."
+	". note. ";
+
+	grid-gap: 5px;
+}
 }
