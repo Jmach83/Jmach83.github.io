@@ -32,14 +32,10 @@
                     <option>Vare</option>                        
                 </select>
             </div>
-            <div>
-                test
-            </div>
-            <div>
-                1
-            </div>
-            <div>1500</div>
-            <div>1500</div>
+            <textarea class="form-control">test</textarea>
+            <input type="number" class="form-control input-size" value="1">
+            <input type="number" class="form-control input-size" value="1500">
+            <input type="number" class="form-control input-size" value="1500">
         </div>
         <hr>
         <div class="lines">
@@ -49,14 +45,10 @@
                     <option>Vare</option>                        
                 </select>
             </div>
-            <div>
-                test
-            </div>
-            <div>
-                1
-            </div>
-            <div>2000</div>
-            <div>1500</div>
+            <textarea class="form-control">test</textarea>
+            <input type="number" class="form-control input-size" value="1">
+            <input type="number" class="form-control input-size" value="1300">
+            <input type="number" class="form-control input-size" value="1000">
         </div>
         <hr>
         </div>
@@ -66,7 +58,7 @@
 </body>
 <script>
     $('.btn-add').click(function() {
-        $(".invoice-lines").append('<div class="lines"><div class="form-group"><select class="form-control btn-size"><option>Ydelse</option><option>Vare</option></select></div><input type="text" class="form-control input-description"><input type="number" class="form-control input-size"><input type="number" class="form-control input-size"><input type="number" class="form-control input-size"></div><hr>');
+        $(".invoice-lines").append('<div class="lines"><div class="form-group"><select class="form-control btn-size"><option>Ydelse</option><option>Vare</option></select></div><textarea class="form-control"></textarea><input type="number" class="form-control input-size"><input type="number" class="form-control input-size"><input type="number" class="form-control input-size"></div><hr>');
     });
 
 </script>
