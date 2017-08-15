@@ -3,7 +3,7 @@
 .grid {
 	display: grid;
 	grid-template-columns: 1fr 2fr 1fr;
-	grid-template-areas: "nav nav nav" ". kunde ." ". hours ." ". expences ." ". indhold ." "footer footer footer";
+	grid-template-areas: "nav nav nav" ". customer ." ". hours ." ". expences ." ". indhold ." "footer footer footer";
 	border: 2px solid black;
 	grid-gap: 10px;
 }
@@ -12,8 +12,14 @@
 	grid-area: nav;
 }
 
-.kunde {
+.customer {
+	display: grid;
 	grid-area: kunde;
+	grid-template-columns: 1fr 4fr;
+	grid-column-gap: 10px;
+	grid-row-gap: 15px;
+	grid-template-areas: "cust_1r1c cust_1r2c" "cust_2r1c cust_2r2c";
+	padding-left: 10px;
 }
 
 .hours {
