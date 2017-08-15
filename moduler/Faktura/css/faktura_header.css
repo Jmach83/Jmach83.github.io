@@ -1,0 +1,22 @@
+.grid {
+	display: grid;
+	grid-template-columns: 2fr 3fr 2fr 2fr;
+	grid-gap: 2px 0px;
+	grid-template-areas: 
+	". po-date info .";
+}
+
+.po-date {
+	grid-area: po-date;
+}
+
+.info {
+	grid-area: info;
+}
+.tax {
+	grid-area: tax;
+}
+
+.check-mark {
+	color: green;
+}
