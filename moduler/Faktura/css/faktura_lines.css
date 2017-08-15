@@ -1,0 +1,81 @@
+.grid {
+   display: grid;
+   grid-template-columns: 2fr 4fr 2fr;
+   
+}
+
+.lines-header {
+    background: #eee;
+}
+
+.invoice-lines {
+    grid-column: 2/3;
+}
+
+.lines {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr 1fr 1fr;    
+    grid-column: 2/3;
+}
+
+.btn-size {
+    width:  80%;
+    height: 40%;      
+}
+
+.btn-add-size {
+    width: 10%;
+}
+
+.btn-add {
+    grid-column:    2/3;
+    grid-row: end;
+}
+
+.input-size {
+    width: 85%;
+}
+
+.input-description {
+    width: 95%;
+}
+
+
+/*
+.line-rows {
+    grid-column: 2/3;
+
+}
+
+
+.lines2 {
+    grid-row: 2/3;
+}
+
+
+.item-type {
+    grid-area: item-type;
+    grid-column: 1/2;
+}
+
+.descr {
+    grid-area: descr;
+    grid-column: 2/3;
+}
+
+.amount {
+    grid-area: amount;
+    grid-column: 3/4;
+}
+
+.unit-price {
+    grid-area: unit-price;
+    grid-column: 4/5;
+}
+
+.total {
+    grid-area: total;
+    grid-column: 5/6;
+}
+
+*/

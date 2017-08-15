@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faktura</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/faktura_lines.css">
+
+
+</head>
+
+<body>
+    <div class="grid">
+        <div class="invoice-lines">
+        <div class="lines lines-header">
+            <div class="item-type">Vare Type</div>
+            <div class="descr">Beskrivelse</div>
+            <div class="amount">Antal</div>
+            <div class="unit-price">Enhedspris</div>
+            <div class="total">Total</div>
+        </div>
+        <hr>
+        <div class="lines">
+            <div class="form-group">
+                <select class="form-control btn-size">
+                    <option>Ydelse</option>
+                    <option>Vare</option>                        
+                </select>
+            </div>
+            <div>
+                test
+            </div>
+            <div>
+                1
+            </div>
+            <div>1500</div>
+            <div>1500</div>
+        </div>
+        <hr>
+        <div class="lines">
+            <div class="form-group">
+                <select class="form-control btn-size">
+                    <option>Ydelse</option>
+                    <option>Vare</option>                        
+                </select>
+            </div>
+            <div>
+                test
+            </div>
+            <div>
+                1
+            </div>
+            <div>2000</div>
+            <div>1500</div>
+        </div>
+        <hr>
+        </div>
+         <button class="btn-add btn-add-size">tilføj</button>
+    </div>
+   
+</body>
+<script>
+    $('.btn-add').click(function() {
+        $(".invoice-lines").append('<div class="lines"><div class="form-group"><select class="form-control btn-size"><option>Ydelse</option><option>Vare</option></select></div><input type="text" class="form-control input-description"><input type="number" class="form-control input-size"><input type="number" class="form-control input-size"><input type="number" class="form-control input-size"></div><hr>');
+    });
+
+</script>
+
+</html>
