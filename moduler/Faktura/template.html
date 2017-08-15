@@ -27,13 +27,13 @@
 
 			<div id="hoursOpt" class="btn-group">
 				<div class="btnClicked">
-					<button class="btn btn-default btn-block btnText">Alle ikke-fakturerede fakturerbare timer<span class="pull-right btnCheck" value="0"></span></button>
+					<button class="btn btn-default btn-block btnText hide-collapse">Alle ikke-fakturerede fakturerbare timer<span class="pull-right btnCheck" value="0"></span></button>
 				</div>
 				<div class="btnClicked">
-					<button class="btn btn-default btn-block btnText" data-toggle="collapse" data-target="#collapse1">Inkludér ikke-faktureret fakturerbarer timer fra:<span class="pull-right btnCheck"></span></button>
+					<button id="btn-collapse" class="btn btn-default btn-block btnText show-collapse">Inkludér ikke-faktureret fakturerbarer timer fra:<span class="pull-right btnCheck"></span></button>
 				</div>
 
-				<div id="collapse1" class="panel-collapse collapse">
+				<div id="collapse1">
 					<select id="periodSelect" class="form-control">
                             <option value="month">Denne måned</option>
                             <option value="lastMonth">Sidste måned</option>
@@ -50,7 +50,7 @@
 					</div>
 				</div>
 				<div class="btnClicked">
-					<button class="btn btn-default btn-block btnText">Ikke inkluder timer<span class="pull-right btnCheck"></span></button>
+					<button class="btn btn-default btn-block btnText hide-collapse">Ikke inkluder timer<span class="pull-right btnCheck"></span></button>
 				</div>
 
 			</div>
@@ -91,6 +91,8 @@
 <script>
 	$(document).ready(function () {
 		$(".js-example-basic-multiple").select2();
+		$('#collapse1').addClass('hidden');
+	
 	});
 
 	$('#periodSelect').on('change', function () {
@@ -102,11 +104,19 @@
 		}
 	});
 
-
 	$('.btnClicked').click(function () {
 		$('.btnClicked').find('span').removeClass('btn glyphicon glyphicon-ok');
 		$(this).find('span').toggleClass('btn glyphicon glyphicon-ok').toggleClass('btn');
 	});
+
+	$('.hide-collapse').click(function() {
+		$('#collapse1').collapse('hide');
+	});
+
+	$('.show-collapse').click(function() {
+		$('#collapse1').removeClass('hidden');
+		$('#collapse1').collapse('show');
+	})
 
 </script>
 
