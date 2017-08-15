@@ -25,19 +25,24 @@
 		<div class="kunde">
 			Kunde
 		</div>
-		<div class="timer">
-			<div id="invHours">2. Fakturerbarer timer:</div>
 
-			<div id="hoursOpt" class="btn-group">
-				<div class="btnClicked">
-					<button class="btn btn-default btn-block btnText hide-collapse">Alle ikke-fakturerede fakturerbare timer<span class="pull-right btnCheck" value="0"></span></button>
-				</div>
-				<div class="btnClicked">
-					<button id="btn-collapse" class="btn btn-default btn-block btnText show-collapse">Inkludér ikke-faktureret fakturerbarer timer fra:<span class="pull-right btnCheck"></span></button>
-				</div>
+		<!--Hours-->
+		<div class="hours">
+			<!-- First row -->
+			<div id="invHours">
+				<h5><strong>Fakturerbarer timer:</strong></h5>
+			</div>
 
-				<div id="collapse1">
-					<select id="periodSelect" class="form-control">
+			<div id="hoursOpt">
+				<div class="btn-group-vertical btn-style">
+
+					<button class="btn btn-default btn-text hide-collapse btnClicked">
+						Alle ikke-fakturerede fakturerbare timer<checkicon class="pull-right btn-check"></checkicon>
+					</button>
+
+					<button class="btn btn-default btn-text show-collapse btnClicked">
+						Inkludér ikke-faktureret fakturerbarer timer fra: 
+						<select id="periodSelect" class="selectpicker" data-style="btn-default btn-xs" data-width="30%" >
                             <option value="month">Denne måned</option>
                             <option value="lastMonth">Sidste måned</option>
                             <option value="quater">Dette kvartal</option>
@@ -46,21 +51,27 @@
                             <option value="lastYear">Sidste år</option>
                             <option value="custom">Brugerdefineret</option>
                         </select>
+						<checkicon class="pull-right btn-check"></checkicon>
+					</button>
 
-					<div id="date" class="hidden">
-						Fra: <input class="form-control" type="date" placeholder="Dato"></input>
-						Til: <input class="form-control" type="date" placeholder="Dato"></input>
+					<div id="collapse1">
+						<div id="date" class="hidden form-inline">
+							Fra: <input class="form-control" type="date" placeholder="Dato"></input>
+							Til: <input class="form-control" type="date" placeholder="Dato"></input>
+						</div>
 					</div>
-				</div>
-				<div class="btnClicked">
-					<button class="btn btn-default btn-block btnText hide-collapse">Ikke inkluder timer<span class="pull-right btnCheck"></span></button>
-				</div>
 
+					<button class="btn btn-default btn-text hide-collapse btnClicked">Ekskluder timer<checkicon class="pull-right btn-check"></checkicon></button>
+				</div>
 			</div>
-			<div id="invType">Faktura type:</div>
+
+			<!-- Second row-->
+			<div id="invType">
+				<h5><strong>Faktura type:</strong></h5>
+			</div>
+
 			<div id="invTypeOpt" class="btn-group">
-				<div>Sortér efter:</div>
-				<select class="js-example-basic-multiple btn-block" multiple="multiple">
+				<select class="js-example-basic-multiple" multiple="multiple" data-width="70%">
                     <option>Projekt</option>
                     <option>Medarbejder</option>
                     <option>Task</option>
@@ -68,23 +79,23 @@
                 </select>
 			</div>
 		</div>
-		<div class="udgifter">
 
-			<div class="grid-expence">
-				<div class="text-right div-padding">
-					<h5><strong>Udgifter:</strong></h5>
-				</div>
-				<div class="div-padding">
-					<div class="btn-group-vertical btn-style" data-toggle="buttons">
-						<label class="btn btn-default active hide-collapse btn-text">
-                                <input type="radio" name="options" id="option1" autocomplete="off" checked> Eksklusiv udgifter
+		<!--Expences-->
+		<div class="expences">
+			<!-- First row -->
+			<div id="1r1c" class="text-right">
+				<h5><strong>Udgifter:</strong></h5>
+			</div>
+
+			<div id="1r2c">
+				<div class="btn-group-vertical btn-style" data-toggle="buttons">
+
+					<label class="btn btn-default show-expence-collapse btn-text expence-btnClicked">
+                                <input type="radio" name="options" id="option2" autocomplete="off"> Alle ikke fakturerede fakturerbarer udgifter<checkicon class="pull-right btn-check"></checkicon>
                             </label>
-						<label class="btn btn-default show-collapse btn-text">
-                                <input type="radio" name="options" id="option2" autocomplete="off"> Alle ikke fakturerede fakturerbarer udgifter
-                            </label>
-						<label class="btn btn-default show-collapse btn-text">
-                                <input type="radio" name="options" id="option3" autocomplete="off"> Inkluder ikke fakturerede fakturerbarer udgifter fra
-                                <select class="selectpicker" data-style="btn-default btn-xs">
+					<label class="btn btn-default show-expence-collapse btn-text expence-btnClicked">
+                                <input type="radio" name="options" id="option3" autocomplete="off"> Inkluder ikke-fakturerede fakturerbarer udgifter fra: 
+								<select class="selectpicker" data-style="btn-default btn-xs" data-width="30%">
                                  <option class="hide-custom-dates">Denne måned</option>
                                  <option class="hide-custom-dates">Sidste måned</option>
                                  <option class="hide-custom-dates"> Dette kvartal</option>
@@ -92,38 +103,46 @@
                                  <option class="hide-custom-dates">Dette år</option>
                                  <option class="hide-custom-dates">Sidste år</option>
                                  <option class="show-custom-dates">Brugerdefineret</option>
-                                </select>
-                            </label>
-						<div class="collapse custom-dates">
-							<input type="date"><input type="date">
-						</div>
+								</select>
+
+								<checkicon class="pull-right btn-check"></checkicon>
+							</label>
+
+					<div id="date" class="collapse custom-dates form-inline">
+						Fra: <input class="form-control" type="date" placeholder="Dato"></input>
+						Til: <input class="form-control" type="date" placeholder="Dato"></input>
 					</div>
+					<label class="btn btn-default hide-expence-collapse btn-text expence-btnClicked">
+                                <input type="radio" name="options" id="option1" autocomplete="off" checked> Ekskluder udgifter<checkicon class="pull-right btn-check"></checkicon>
+                            </label>
 				</div>
 			</div>
-			<div class="collapse coll-expence">
-				<div class="grid-coll-expence">
-					<div class=" text-right div-padding">
-						<h5><strong>Udgifts type:</strong></h5>
-					</div>
-					<div class="div-padding">
-						<select class="selectpicker" data-style=" btn-default btn-md" multiple data-max-options="4" title="Sorter efter" data-width="75%">
+
+			<!-- Second row collapse-->
+			<div id="2r1c" class="collapse expence-collapse text-right">
+				<h5><strong>Udgifts type:</strong></h5>
+			</div>
+			<div id="2r2c" class="collapse expence-collapse">
+				<select class="selectpicker" data-style=" btn-default btn-md" multiple data-max-options="4" title="Sorter efter..." data-width="70%">
                                  <option data-content="<span class='label label-primary'>Projekt</span>"></option>
                                  <option data-content="<span class='label label-primary'>Medarbejdere</span>"></option>
                                  <option data-content="<span class='label label-primary'>Tasks</span>"></option>
                                  <option data-content="<span class='label label-primary'>Labels</span>"></option>
                             </select>
-						<p> detaljerede linjer?????</p>
-					</div>
-					<div class="text-right div-padding ">
-						<h5><strong>Regninger:</strong></h5>
-					</div>
-					<div class="div-padding">
-						Vedhæft udgifts billag, med kvitteringer
-						<span class="help-block">Du kan se bilaget, på den gemte faktura</span>
-						<input type="file" class="form-control-file" id="file1" multiple>
-					</div>
-				</div>
+				<p> Skal der være detaljerede linjer?????</p>
 			</div>
+
+			<!-- Third row collapse-->
+			<div class="collapse expence-collapse text-right">
+				<h5><strong>Regninger:</strong></h5>
+			</div>
+			<div class="collapse expence-collapse">
+				Vedhæft udgifts billag, med kvitteringer
+				<span class="help-block">Du kan se bilaget, på den gemte faktura</span>
+				<input type="file" class="form-control-file" id="file1" multiple>
+			</div>
+			<!-- </div> -->
+			<!-- </div> -->
 
 		</div>
 		<div class="indhold subgrid">
@@ -146,12 +165,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
-<!-- bootstrap-select  (udgifter)-->
+<!-- bootstrap-select  (expences)-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/js/bootstrap-select.min.js"></script>
 
 <script>
 	$(document).ready(function () {
-		$(".js-example-basic-multiple").select2();
+		$(".js-example-basic-multiple").select2({
+			placeholder: "Sorter efter..."
+		});
 		$('#collapse1').addClass('hidden');
 
 	});
@@ -165,11 +186,20 @@
 		}
 	});
 
+
+
+	//Green check icon on btn
 	$('.btnClicked').click(function () {
-		$('.btnClicked').find('span').removeClass('btn glyphicon glyphicon-ok');
-		$(this).find('span').toggleClass('btn glyphicon glyphicon-ok').toggleClass('btn');
+		$('.btnClicked').find('checkicon').removeClass('btn glyphicon glyphicon-ok');
+		$(this).find('checkicon').toggleClass('btn glyphicon glyphicon-ok').toggleClass('btn');
+	});
+	$('.expence-btnClicked').click(function () {
+		$('.expence-btnClicked').find('checkicon').removeClass('btn glyphicon glyphicon-ok');
+		$(this).find('checkicon').toggleClass('btn glyphicon glyphicon-ok').toggleClass('btn');
 	});
 
+
+	// collapse inside hours
 	$('.hide-collapse').click(function () {
 		$('#collapse1').collapse('hide');
 	});
@@ -180,14 +210,13 @@
 	})
 
 
-
-	// collapse i udgifter
+	// collapse inside expences
 	$(document).ready(function () {
-		$(".show-collapse ").click(function () {
-			$(".coll-expence").collapse('show');
+		$(".show-expence-collapse ").click(function () {
+			$(".expence-collapse").collapse('show');
 		});
-		$(".hide-collapse ").click(function () {
-			$(".coll-expence").collapse('hide');
+		$(".hide-expence-collapse ").click(function () {
+			$(".expence-collapse").collapse('hide');
 		});
 		$(".show-custom-dates").click(function () {
 			$(".custom-dates").collapse('show');
@@ -196,7 +225,6 @@
 			$(".custom-dates").collapse('hide');
 		});
 	});
-	// collapse i udgifter END
 
 </script>
 
