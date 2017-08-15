@@ -51,6 +51,7 @@
 
 .udgifter {
 	grid-area: udgifter;
+	grid-row-gap: 15px;
 }
 
 .indhold {
@@ -167,5 +168,34 @@
     #invTypeOpt {
         padding-top: 20px;
         padding-bottom: 20px;
-    }
+	}
+	
+	/* CSS for udgifter */
+		.grid-expence {
+            display: grid;
+            grid-template-columns: 1fr 4fr;
+            grid-column-gap: 10px;
+        }
+
+        .grid-coll-expence {
+            display: grid;
+            grid-template-columns: 1fr 4fr;
+            grid-column-gap: 10px;
+            grid-row-gap: 15px;
+        }
+
+        .div-padding {
+            padding: 5px;
+        }
+
+        .btn-text {
+            text-align: left !important;
+        }
+
+        .btn-style {
+            width: 75%;
+        }
+	/* CSS for udgifter END */
+
+
 }
