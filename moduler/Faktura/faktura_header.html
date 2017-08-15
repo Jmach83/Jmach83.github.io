@@ -8,9 +8,9 @@
 	<title>Faktura header</title>
 
 	<!-- Bootstrap -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link rel="stylesheet" href="css/faktura_header.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">	
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+	<link rel="stylesheet" href="css/faktura_header.css">
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -21,12 +21,19 @@
   <body>
 
   	<div class="grid">
-  		<div class="po-date" style="border-color: black; border-style: solid; border-width: 1px;">
+  		<div class="info">
+  			<div class="addess-template">
+  				<div><strong>Faktura ID:</strong> 10</div>
+  				<div><strong>Firma:</strong> Alpha Solutions</div>
+  				<div><strong>Adresse:</strong> Gothersgade 14, 4th floor DK-1123 Copenhagen K Denmark.</div><br>
+  			</div>
+  		</div>
+  		<div class="po-date">
   			<div>
-  				<input type="text" placeholder="po-number">
+  				<input type="text" class="form-control" placeholder="po-number">
   			</div>
   			<div>
-  				<input type="date" placeholder="issue-date">
+  				<input type="date" class="form-control" placeholder="issue-date">
   			</div>
   			<div>
   				<select class="selectpicker show-tick" title="Forfaldsdato">  					 				
@@ -36,23 +43,25 @@
   				</select> 				
   			</div>	
   		</div>
-  		<div class="info" style="border-color: black; border-style: solid; border-width: 1px;">
-  			<div class="address">
-  				<p>Faktura ID</p>
-  				<p>Firma:</p>
-  				<p>Adresse:</p>
-  			</div>
+  		<div class="payment">
   			<div class="tax">
-  				<input type="text" placeholder="Moms">
+  				<input type="number" class="form-control" placeholder="Moms %">
   			</div>
   			<div class="discount">
-  				<input type="text" placeholder="Rabat">
+  				<input type="number" class="form-control" placeholder="Rabat %">
   			</div>
   			<div class="currency">
-  				<input type="text" placeholder="Valuta">
+  				<select class="selectpicker show-tick select-size" 	title="Valuta">
+  					<option value="DKK">DKK</option>
+  					<option value="Dollar">Dollar</option>
+  					<option value="Euro">Euro</option>
+  				</select>
   			</div>
   		</div>
-  	</div>
+
+  		
+  	</div> 
+
 
   	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
