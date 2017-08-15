@@ -11,6 +11,9 @@
 	<!-- select2 -->
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 
+	<!-- bootstrap-select  (udgifter)-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css">
+
 
 </head>
 
@@ -27,13 +30,13 @@
 
 			<div id="hoursOpt" class="btn-group">
 				<div class="btnClicked">
-					<button class="btn btn-default btn-block btnText">Alle ikke-fakturerede fakturerbare timer<span class="pull-right btnCheck" value="0"></span></button>
+					<button class="btn btn-default btn-block btnText hide-collapse">Alle ikke-fakturerede fakturerbare timer<span class="pull-right btnCheck" value="0"></span></button>
 				</div>
 				<div class="btnClicked">
-					<button class="btn btn-default btn-block btnText" data-toggle="collapse" data-target="#collapse1">Inkludér ikke-faktureret fakturerbarer timer fra:<span class="pull-right btnCheck"></span></button>
+					<button id="btn-collapse" class="btn btn-default btn-block btnText show-collapse">Inkludér ikke-faktureret fakturerbarer timer fra:<span class="pull-right btnCheck"></span></button>
 				</div>
 
-				<div id="collapse1" class="panel-collapse collapse">
+				<div id="collapse1">
 					<select id="periodSelect" class="form-control">
                             <option value="month">Denne måned</option>
                             <option value="lastMonth">Sidste måned</option>
@@ -50,7 +53,7 @@
 					</div>
 				</div>
 				<div class="btnClicked">
-					<button class="btn btn-default btn-block btnText">Ikke inkluder timer<span class="pull-right btnCheck"></span></button>
+					<button class="btn btn-default btn-block btnText hide-collapse">Ikke inkluder timer<span class="pull-right btnCheck"></span></button>
 				</div>
 
 			</div>
@@ -66,7 +69,62 @@
 			</div>
 		</div>
 		<div class="udgifter">
-			Udgifter
+
+			<div class="grid-expence">
+				<div class="text-right div-padding">
+					<h5><strong>Udgifter:</strong></h5>
+				</div>
+				<div class="div-padding">
+					<div class="btn-group-vertical btn-style" data-toggle="buttons">
+						<label class="btn btn-default active hide-collapse btn-text">
+                                <input type="radio" name="options" id="option1" autocomplete="off" checked> Eksklusiv udgifter
+                            </label>
+						<label class="btn btn-default show-collapse btn-text">
+                                <input type="radio" name="options" id="option2" autocomplete="off"> Alle ikke fakturerede fakturerbarer udgifter
+                            </label>
+						<label class="btn btn-default show-collapse btn-text">
+                                <input type="radio" name="options" id="option3" autocomplete="off"> Inkluder ikke fakturerede fakturerbarer udgifter fra
+                                <select class="selectpicker" data-style="btn-default btn-xs">
+                                 <option class="hide-custom-dates">Denne måned</option>
+                                 <option class="hide-custom-dates">Sidste måned</option>
+                                 <option class="hide-custom-dates"> Dette kvartal</option>
+                                 <option class="hide-custom-dates">Sidste kvartal</option>
+                                 <option class="hide-custom-dates">Dette år</option>
+                                 <option class="hide-custom-dates">Sidste år</option>
+                                 <option class="show-custom-dates">Brugerdefineret</option>
+                                </select>
+                            </label>
+						<div class="collapse custom-dates">
+							<input type="date"><input type="date">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="collapse coll-expence">
+				<div class="grid-coll-expence">
+					<div class=" text-right div-padding">
+						<h5><strong>Udgifts type:</strong></h5>
+					</div>
+					<div class="div-padding">
+						<select class="selectpicker" data-style=" btn-default btn-md" multiple data-max-options="4" title="Sorter efter" data-width="75%">
+                                 <option data-content="<span class='label label-primary'>Projekt</span>"></option>
+                                 <option data-content="<span class='label label-primary'>Medarbejdere</span>"></option>
+                                 <option data-content="<span class='label label-primary'>Tasks</span>"></option>
+                                 <option data-content="<span class='label label-primary'>Labels</span>"></option>
+                            </select>
+						<p> detaljerede linjer?????</p>
+					</div>
+					<div class="text-right div-padding ">
+						<h5><strong>Regninger:</strong></h5>
+					</div>
+					<div class="div-padding">
+						Vedhæft udgifts billag, med kvitteringer
+						<span class="help-block">Du kan se bilaget, på den gemte faktura</span>
+						<input type="file" class="form-control-file" id="file1" multiple>
+					</div>
+				</div>
+			</div>
+
 		</div>
 		<div class="indhold subgrid">
 			Indhold
@@ -88,9 +146,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+<!-- bootstrap-select  (udgifter)-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/js/bootstrap-select.min.js"></script>
+
 <script>
 	$(document).ready(function () {
 		$(".js-example-basic-multiple").select2();
+		$('#collapse1').addClass('hidden');
+
 	});
 
 	$('#periodSelect').on('change', function () {
@@ -102,11 +165,38 @@
 		}
 	});
 
-
 	$('.btnClicked').click(function () {
 		$('.btnClicked').find('span').removeClass('btn glyphicon glyphicon-ok');
 		$(this).find('span').toggleClass('btn glyphicon glyphicon-ok').toggleClass('btn');
 	});
+
+	$('.hide-collapse').click(function () {
+		$('#collapse1').collapse('hide');
+	});
+
+	$('.show-collapse').click(function () {
+		$('#collapse1').removeClass('hidden');
+		$('#collapse1').collapse('show');
+	})
+
+
+
+	// collapse i udgifter
+	$(document).ready(function () {
+		$(".show-collapse ").click(function () {
+			$(".coll-expence").collapse('show');
+		});
+		$(".hide-collapse ").click(function () {
+			$(".coll-expence").collapse('hide');
+		});
+		$(".show-custom-dates").click(function () {
+			$(".custom-dates").collapse('show');
+		});
+		$(".hide-custom-dates").click(function () {
+			$(".custom-dates").collapse('hide');
+		});
+	});
+	// collapse i udgifter END
 
 </script>
 
