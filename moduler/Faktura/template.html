@@ -25,11 +25,73 @@
 
 		<!--Customer-->
 		<div class="customer">
-			<div id=""></div>
-			<div id=""></div>
-			<div id=""></div>
-			<div id=""></div>
+			<!--First row-->
+			<div id="cust_1r1c">
+				<h5><strong>Kunde:</strong></h5>
+			</div>
+
+			<div id="cust_1r2c">
+				<div class="btn-style">
+					<select id="cust-select" class="selectpicker form-control" data-style="btn-default" data-live-search="true" title="Søg: Kunde">
+					<option class="show-project-collapse">Ikea</option>
+					<option class="hide-project-collapse">Toys `r us</option>
+					<option class="hide-project-collapse">Tivoli</option>
+					<option class="hide-project-collapse">Nordisk Film Biografer</option>
+					<option class="hide-project-collapse">Bakken</option>
+					<option class="hide-project-collapse">Christiansborg</option>
+				</select>
+				</div>
+			</div>
+			<!--Second row-->
+			<div id="cust_2r1c" class="collapse project-collapse">
+				<h5 id="label"><strong>Projekt:</strong></h5>
+			</div>
+			<div id="cust_2r2c" class="collapse project-collapse">
+
+
+				<div class="form-group btn-style">
+					<!-- <div class="dropdown"> -->
+
+					<input type="search" class="form-control dropdown-toggle" data-toggle="dropdown" placeholder="Søg: Projekt">
+					<div class="jumbotron" style="padding:5px">
+						<input type="checkbox" class="" checked> Vælg alle</input>
+						<br><br>
+						<input type="checkbox" value="" checked> Database<br>
+						<input type="checkbox" value="" checked> JavaScript<br>
+						<input type="checkbox" value="" checked> CSS<br>
+
+						<!-- </div> -->
+					</div>
+
+				</div>
+			</div>
 		</div>
+
+
+		<!-- Søgebar for projekt 
+				<div class="form-group btn-style" id="1" hidden="true">
+					<div class="dropdown">
+						<input type="search" class="form-control dropdown-toggle" data-toggle="dropdown" placeholder="Søg: Projekt">
+						<div class="jumbotron">
+							<input type="checkbox" value="" checked>Marker / Umarker alle<br><br>
+							<input type="checkbox" value="" checked>Database<br>
+							<input type="checkbox" value="" checked>JavaScript<br>
+							<input type="checkbox" value="" checked>CSS<br>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group" id="2" hidden="true">
+					<div class="dropdown">
+						<input type="search" class="dropdown-toggle form-control btn-sidebar" data-toggle="dropdown" placeholder="Søg: Projekt">
+						<div class="jumbotron">
+							<input type="checkbox" value="" checked>Database<br>
+							<input type="checkbox" value="" checked>JavaScript<br>
+							<input type="checkbox" value="" checked>CSS<br>
+						</div>
+					</div>
+				</div> -->
+
 
 		<!--Hours-->
 		<div class="hours">
@@ -150,6 +212,7 @@
 			<!-- </div> -->
 
 		</div>
+
 		<div class="indhold subgrid">
 			Indhold
 			<div class="header">
@@ -180,6 +243,10 @@
 		});
 		$('#collapse1').addClass('hidden');
 
+		$("#cust-select").selectpicker({
+			placeholder: "Sorter efter..."
+		});
+
 	});
 
 	$('#periodSelect').on('change', function () {
@@ -202,6 +269,9 @@
 		$('.expence-btnClicked').find('checkicon').removeClass('btn glyphicon glyphicon-ok');
 		$(this).find('checkicon').toggleClass('btn glyphicon glyphicon-ok').toggleClass('btn');
 	});
+
+
+
 
 
 	// collapse inside hours
@@ -229,6 +299,14 @@
 		$(".hide-custom-dates").click(function () {
 			$(".custom-dates").collapse('hide');
 		});
+
+		// collapse inside customer 
+		$('.hide-project-collapse').click(function () {
+			$('.project-collapse').collapse('hide');
+		});
+		$('.show-project-collapse').click(function () {
+			$('.project-collapse').collapse('show');
+		})
 	});
 
 </script>

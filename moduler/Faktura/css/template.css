@@ -14,31 +14,54 @@
 
 .customer {
 	display: grid;
-	grid-area: kunde;
+	grid-area: customer;
 	grid-template-columns: 1fr 4fr;
 	grid-column-gap: 10px;
 	grid-row-gap: 15px;
 	grid-template-areas: "cust_1r1c cust_1r2c" "cust_2r1c cust_2r2c";
 	padding-left: 10px;
 }
+.customer > div {
+	padding: 5px;
+}
+
+#cust_1r1c {
+	grid-area: cust_1r1c;
+	text-align: right;
+}
+#cust_2r1c {
+	grid-area: cust_2r1c;	
+	text-align: right;
+}
 
 .hours {
 	display: grid;
 	grid-area: hours;
-	/* nyt */
 	grid-template-columns: 1fr 4fr;
 	grid-column-gap: 10px;
 	grid-row-gap: 15px;
 	grid-template-areas: "invHours hoursOpt" "invType invTypeOpt";
 	padding-left: 10px;
-	/* grid-template-columns: 2fr 1fr 3fr 5fr;
-	grid-template-areas: "invHours . hoursOpt ." "invType . invTypeOpt ."  */
+
 }
 
 .hours > div {
 	padding: 5px;
 }
 
+/*hours areas*/
+
+#invHours {
+	grid-area: invHours;
+	text-align: right;
+}
+
+#invType {
+	grid-area: invType;
+	text-align: right;
+}
+
+/*hours areas slut*/
 .expences {
 	display: grid;
 	grid-area: expences;
@@ -84,7 +107,7 @@
 	width: 70%;
 }
 
-/* style timer */
+/* hours style */
 
 .btn-check {
 	color: green;
@@ -100,36 +123,7 @@
 /* hours layout slut */
 
 
-/*hours areas*/
 
-#invHours {
-	grid-area: invHours;
-	/* nyt */
-	text-align: right;
-	/* padding-top: 20px; */
-}
-
-#invType {
-	grid-area: invType;
-	/* nyt */
-	text-align: right;
-	/* padding-left: 50px;
-	padding-top: 20px; */
-}
-
-#hoursOpt {
-	grid-area: hoursOpt;
-	/* padding-top: 20px; */
-}
-
-#invTypeOpt {
-	grid-area: invTypeOpt;
-	/* padding-top: 20px;
-	padding-bottom: 20px; */
-}
-
-
-/*hours areas slut*/
 
 
 /* grid div + subgrid + subgrid div */
