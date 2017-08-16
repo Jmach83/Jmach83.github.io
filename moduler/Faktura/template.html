@@ -20,7 +20,8 @@
 <body>
 	<div class="grid">
 		<div class="nav">
-			Nav
+		<img src="./lasse-faktura/alpha-logo.png" align="left"><br>
+		  <h1 style="text-align: center; ">Faktura</h1><br>
 		</div>
 
 		<!--Customer-->
@@ -66,32 +67,6 @@
 				</div>
 			</div>
 		</div>
-
-
-		<!-- Søgebar for projekt 
-				<div class="form-group btn-style" id="1" hidden="true">
-					<div class="dropdown">
-						<input type="search" class="form-control dropdown-toggle" data-toggle="dropdown" placeholder="Søg: Projekt">
-						<div class="jumbotron">
-							<input type="checkbox" value="" checked>Marker / Umarker alle<br><br>
-							<input type="checkbox" value="" checked>Database<br>
-							<input type="checkbox" value="" checked>JavaScript<br>
-							<input type="checkbox" value="" checked>CSS<br>
-						</div>
-					</div>
-				</div>
-
-				<div class="form-group" id="2" hidden="true">
-					<div class="dropdown">
-						<input type="search" class="dropdown-toggle form-control btn-sidebar" data-toggle="dropdown" placeholder="Søg: Projekt">
-						<div class="jumbotron">
-							<input type="checkbox" value="" checked>Database<br>
-							<input type="checkbox" value="" checked>JavaScript<br>
-							<input type="checkbox" value="" checked>CSS<br>
-						</div>
-					</div>
-				</div> -->
-
 
 		<!--Hours-->
 		<div class="hours">
@@ -216,7 +191,48 @@
 		<div class="indhold subgrid">
 			Indhold
 			<div class="header">
-				Header
+				<div class="info">
+					<div class="addess-template">
+						<div><strong>Faktura ID:</strong> 10</div>
+						<div><strong>Firma:</strong> Alpha Solutions</div>
+						<div><strong>Adresse:</strong> Gothersgade 14, 4th floor DK-1123 Copenhagen K Denmark.</div><br>
+					</div>
+				</div>
+
+
+				<div class="po-date">
+					<div>
+						<input type="text" class="form-control" placeholder="po-number">
+					</div>
+					<div>
+						<input type="date" class="form-control" placeholder="issue-date">
+					</div>
+					<div>
+						<select class="selectpicker show-tick" title="Forfaldsdato">
+							<option>15 Dage</option>
+							<option>60 Dage</option>
+							<option>90 Dage</option>
+						</select>
+					</div>
+				</div>
+				<div class="payment">
+					<div class="tax">
+						<input type="number" class="form-control" placeholder="Moms %">
+					</div>
+					<div class="discount">
+						<input type="number" class="form-control" placeholder="Rabat %">
+					</div>
+					<div class="currency">
+						<select class="selectpicker show-tick select-size" title="Valuta">
+  					<option value="DKK">DKK</option>
+  					<option value="Dollar">Dollar</option>
+  					<option value="Euro">Euro</option>
+  				</select>
+					</div>
+				</div>
+
+
+
 			</div>
 			<div class="linier">
 				Linier

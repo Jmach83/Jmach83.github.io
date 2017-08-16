@@ -3,7 +3,7 @@
 .grid {
 	display: grid;
 	grid-template-columns: 1fr 2fr 1fr;
-	grid-template-areas: "nav nav nav" ". customer ." ". hours ." ". expences ." ". indhold ." "footer footer footer";
+	grid-template-areas: ". nav ." ". customer ." ". hours ." ". expences ." ". indhold ." "footer footer footer";
 	border: 2px solid black;
 	grid-gap: 10px;
 }
@@ -82,7 +82,9 @@
 
 .header {
 	grid-area: header;
+	
 }
+
 
 .linier {
 	grid-area: linier;
@@ -129,38 +131,39 @@
 /* grid div + subgrid + subgrid div */
 
 .grid > div {
-	border: solid black;
+	/* border: solid black; */
 }
 
 .grid > div:nth-child(odd) {
-	background: #eee;
+	/* background: #eee; */
 }
 
 .grid > div:nth-child(even) {
-	background: #ddd;
+	/* background: #ddd; */
 }
 
 .subgrid {
 	display: grid;
-	grid-template-areas: "." "header" "linier" "note";
+	grid-template-areas: "header" "linier" "note";
 	grid-gap: 5px;
 }
 
+
 .subgrid > div {
-	border: solid black;
+	/* border: solid black; */
 }
 
 .subgrid > div:nth-child(odd) {
-	background: #bbb;
+	/* background: #bbb; */
 }
 
 .subgrid > div:nth-child(even) {
-	background: #ccc;
+	/* background: #ccc; */
 }
-
+/* 
 .subgrid {
 	display: grid;
 	grid-template-columns: 1fr 10fr 1fr;
 	grid-template-areas: ". . ." ". header ." ". linier ." ". note. ";
 	grid-gap: 5px;
-}
+} */
