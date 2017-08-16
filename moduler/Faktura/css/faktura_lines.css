@@ -1,11 +1,12 @@
 .grid {
    display: grid;
-   grid-template-columns: 2fr 4fr 2fr;
-   
+   grid-template-columns: 2fr 4fr 2fr;   
 }
 
 .lines-header {
     background: #eee;
+    height: 3vh;
+    align-items: center;
 }
 
 .invoice-lines {
@@ -29,8 +30,9 @@
 }
 
 .btn-add {
-    grid-column:    2/3;
+    grid-column: 2/3;
     grid-row: end;
+    
 }
 
 .input-size {
@@ -40,6 +42,17 @@
 
 .input-description {
     width: 95%;
+}
+
+.price-comment {
+    padding-top: 3vh;
+    padding-left: 1.5vw;
+    padding-right: 1.5vw;
+    grid-column: 2/3;
+    background: #eee;
+    align-items: center;
+    padding: 30px;
+    margin-top: 1vw;
 }
 
 
