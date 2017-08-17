@@ -2,8 +2,8 @@
 
 .grid {
 	display: grid;
-	grid-template-columns: 1fr 2.5fr 1fr;
-	grid-template-areas: ". nav ." ". customer ." ". hours ." ". expences ." ". indhold ." "footer footer footer";
+	grid-template-columns: 0.75fr 2.5fr 0.75fr;
+	grid-template-areas: "nav nav nav" ". customer ." ". hours ." ". expences ." ". indhold ." "footer footer footer";
 	border: 2px solid black;
 	grid-gap: 10px;
 }
@@ -29,9 +29,15 @@
 	grid-area: cust_1r1c;
 	text-align: right;
 }
+
+
+#cust_1r2c {
+	grid-area: cust_1r2c;
+}
 #cust_2r1c {
 	grid-area: cust_2r1c;	
 	text-align: right;
+	
 }
 
 .hours {
@@ -77,10 +83,16 @@
 }
 
 .indhold {
+	border: solid 1px #eee;
+	padding: 20px;
 	grid-area: indhold;
 }
 
 .header {
+	
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: "info po-date";
 	grid-area: header;
 	
 }
@@ -206,7 +218,7 @@
 }
 
 .btn-add-size {
-    width: 10%;
+    width: 20%;
 }
 
 .btn-add {
@@ -254,15 +266,19 @@
 
 /* faktura header */
 
-
-
 .po-date {
+
+	
 	grid-area: po-date;
 }
 
 .info {
-	grid-area: info;	
+
+	grid-area: info;
 }
+
+/*
+
 
 .tax {
 	grid-area: tax;
@@ -280,7 +296,7 @@
 
 .currency {
 	grid-area: currency;
-}
+} */
 
 .check-mark {
 	color: green;
@@ -291,9 +307,5 @@
 }
 
 .form-control-header {
-	width: 40%;
-}
-
-.select-size {
-	width: 40% !important;
+	width: 100%;
 }

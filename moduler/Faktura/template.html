@@ -20,13 +20,42 @@
 <body>
 	<div class="grid">
 		<div class="nav">
-			<img src="./lasse-faktura/alpha-logo.png" align="left"><br>
-			<h1 style="text-align: center; ">Faktura</h1><br>
+
+			<nav class="navbar navbar-default" id="navbarCustom" style="height: 100px">
+				<div class="container-fluid">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+						 aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span> 
+						  </button>
+
+						<a class="navbar-brand" href="#">
+							<img id="logo" alt="Brand" src="./lasse-faktura/alpha-logo.png" height="500%">
+						  </a>
+					</div>
+
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						
+						<p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">Jonas Machon</a></p>
+					</div>
+					<!-- /.navbar-collapse -->
+				</div>
+				<!-- /.container-fluid -->
+			</nav>
+			<!-- <img src="./lasse-faktura/alpha-logo.png" align="left"><br>
+			<h1 >Faktura</h1><br> -->
 		</div>
 
 		<!--Customer-->
 		<div class="customer">
 			<!--First row-->
+
+
 			<div id="cust_1r1c">
 				<h5><strong>Kunde:</strong></h5>
 			</div>
@@ -43,6 +72,7 @@
 					</select>
 				</div>
 			</div>
+
 			<!--Second row-->
 			<div id="cust_2r1c" class="collapse project-collapse">
 				<h5 id="label"><strong>Projekt:</strong></h5>
@@ -120,29 +150,24 @@
 			</div>
 		</div>
 
-		<!--Expences-->
-
-
 		<div class="indhold subgrid">
 			<div class="header">
 				<div class="info">
-					<div class="addess-template">
-						<div><strong>Fakturanummer:</strong> 10</div>
-						<div><strong>Firma:</strong> Alpha Solutions</div>
-						<div><strong>Adresse:</strong> Gothersgade 14, 4th floor DK-1123 Copenhagen K Denmark.</div><br>
-					</div>
+
+					<div><strong>Fakturanummer:</strong> 10</div>
+					<div><strong>Firma:</strong> Alpha Solutions</div>
+					<div><strong>Adresse:</strong> Gothersgade 14, 4th floor DK-1123 Copenhagen K Denmark.</div><br>
+
 				</div>
 
 
 				<div class="po-date">
-					<div>
-						<input type="text" class="form-control form-control-header" placeholder="po-number">
-					</div>
-					<div>
+					<div class="input-group-vertical pull-right">
+						<input type="text" class="form-control form-control-header" width="500px;" placeholder="po-number">
+
 						<input type="date" class="form-control form-control-header" placeholder="issue-date">
-					</div>
-					<div>
-						<select class="selectpicker select-size show-tick form-control-header" title="Betalingsbetingelser">
+
+						<select class="selectpicker show-tick form-control-header" title="Betalingsbetingelser">
 							<option>15 Dage</option>
 							<option>60 Dage</option>
 							<option>90 Dage</option>
@@ -167,7 +192,7 @@
 					</div>
 					<hr>
 					<div class="lines">
-						<button class="btn glyphicon glyphicon-minus require-comment-delete"></button>
+						<button class="btn glyphicon glyphicon-trash require-comment-delete"></button>
 						<div class="form-group">
 							<select class="form-control btn-size">
 								<option>Ydelse</option>
@@ -188,7 +213,7 @@
 					</div>
 					<hr>
 					<div class="lines lines-delete">
-						<button class="btn require-comment-delete glyphicon glyphicon-minus"></button>
+						<button class="btn require-comment-delete glyphicon glyphicon-trash"></button>
 						<div class="form-group">
 							<select class="form-control btn-size">
 								<option>Ydelse</option>
@@ -223,7 +248,7 @@
 				<div class="note">
 					<label for="note">Notes: </label>
 					<textarea class="form-control" rows="5" id="note"></textarea>
-				</div>				
+				</div>
 			</div>
 			<div class="btn-confirm">
 				<button class="btn btn-add-size">Gem kladde</button>
@@ -318,7 +343,7 @@
 	//Lines
 
 	$('.btn-add').click(function () {
-		$(".invoice-lines").append('<div class="lines"><button class="require-comment-delete">X</button><div class="form-group"><select class="form-control btn-size"><option>Ydelse</option><option>Vare</option></select></div><textarea class="form-control"></textarea><input type="number" class="form-control input-size"><input type="number" class="form-control input-size"><input type="text" class="form-control input-size"><input type="text" class="form-control input-size"><input type="number" class="form-control input-size"></div><hr>');
+		$(".invoice-lines").append('<div class="lines"><button class="btn glyphicon glyphicon-trash require-comment-delete"></button><div class="form-group"><select class="form-control btn-size"><option>Ydelse</option><option>Vare</option></select></div><textarea class="form-control"></textarea><input type="number" class="form-control input-size"><input type="number" class="form-control input-size"><input type="text" class="form-control input-size"><input type="text" class="form-control input-size"><input type="number" class="form-control input-size"></div><br><button class="btn btn-primary glyphicon glyphicon-file"></button>Tilføj fil<hr>');
 	});
 
 	$('.require-comment').on('input', function () {
