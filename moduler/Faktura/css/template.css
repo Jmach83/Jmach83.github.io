@@ -2,8 +2,8 @@
 
 .grid {
 	display: grid;
-	grid-template-columns: 1fr 2fr 1fr;
-	grid-template-areas: "nav nav nav" ". customer ." ". hours ." ". expences ." ". indhold ." "footer footer footer";
+	grid-template-columns: 1fr 2.5fr 1fr;
+	grid-template-areas: ". nav ." ". customer ." ". hours ." ". expences ." ". indhold ." "footer footer footer";
 	border: 2px solid black;
 	grid-gap: 10px;
 }
@@ -82,7 +82,9 @@
 
 .header {
 	grid-area: header;
+	
 }
+
 
 .linier {
 	grid-area: linier;
@@ -129,38 +131,119 @@
 /* grid div + subgrid + subgrid div */
 
 .grid > div {
-	border: solid black;
+	/* border: solid black; */
 }
 
 .grid > div:nth-child(odd) {
-	background: #eee;
+	/* background: #eee; */
 }
 
 .grid > div:nth-child(even) {
-	background: #ddd;
+	/* background: #ddd; */
 }
 
 .subgrid {
 	display: grid;
-	grid-template-areas: "." "header" "linier" "note";
+	grid-template-areas: "header" "linier" "note";
 	grid-gap: 5px;
 }
 
+
 .subgrid > div {
-	border: solid black;
+	/* border: solid black; */
 }
 
 .subgrid > div:nth-child(odd) {
-	background: #bbb;
+	/* background: #bbb; */
 }
 
 .subgrid > div:nth-child(even) {
-	background: #ccc;
+	/* background: #ccc; */
 }
-
+/* 
 .subgrid {
 	display: grid;
 	grid-template-columns: 1fr 10fr 1fr;
 	grid-template-areas: ". . ." ". header ." ". linier ." ". note. ";
 	grid-gap: 5px;
+} */
+
+/* Lines */
+
+
+.lines-header {
+    background: #eee;
+    height: 3vh;
+    align-items: center;
+}
+
+.invoice-lines {
+    grid-column: 2/3;
+}
+
+.lines {
+    display: grid;
+    grid-template-columns: 0.5fr 1.5fr 4fr 1fr 1fr 1fr 1fr 1fr;    
+    grid-column: 2/3;
+    grid-column-gap: 0.5vw;
+    text-align: center;
+}
+
+.line-footer {
+	display: grid;
+	grid-template-columns: 12.5fr 1fr;
+	background-color: #eee;
+	text-align: right;
+}
+
+.total-footer {
+	grid-column: 1/2;
+}
+
+.btn-size {
+    width:  90%;      
+}
+
+.btn-add-size {
+    width: 10%;
+}
+
+.btn-add {
+    grid-column: 2/3;
+    grid-row: end;
+    
+}
+
+.input-size {
+    width: 85%;
+    margin-left: 15%;
+}
+
+.input-description {
+    width: 95%;
+}
+
+.price-comment {
+    padding-top: 3vh;
+    padding-left: 1.5vw;
+    padding-right: 1.5vw;
+    grid-column: 2/3;
+    background: #eee;
+    align-items: center;
+    padding: 30px;
+    margin-top: 1vw;
+}
+
+.require-comment-delete {
+	height: 40%;
+	width: 35%;
+	padding: 0px;
+}
+
+/* Note */
+
+.note {
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-bottom: 8%;
 }
