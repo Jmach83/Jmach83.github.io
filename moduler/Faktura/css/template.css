@@ -96,6 +96,7 @@
 
 .footer {
 	grid-area: footer;
+	text-align: center;
 }
 
 
@@ -209,6 +210,8 @@
 }
 
 .btn-add {
+	margin-top: 1vh;
+	margin-bottom: 1vh;
     grid-column: 2/3;
     grid-row: end;
     
@@ -235,15 +238,62 @@
 }
 
 .require-comment-delete {
-	height: 40%;
-	width: 35%;
+	height: 60%;
 	padding: 0px;
 }
 
 /* Note */
 
 .note {
-	margin-left: 5%;
-	margin-right: 5%;
-	margin-bottom: 8%;
+	padding-top: 0.5vw;
+	padding-left: 1vw;
+	padding-right: 1vw;
+	padding-bottom: 1.5vh;
+	background: #eee;
+}
+
+/* faktura header */
+
+
+
+.po-date {
+	grid-area: po-date;
+}
+
+.info {
+	grid-area: info;	
+}
+
+.tax {
+	grid-area: tax;
+}
+
+.payment {
+	grid-area: payment;
+	align-self: end;
+}
+
+.discount {
+	grid-area: discount;
+
+}
+
+.currency {
+	grid-area: currency;
+}
+
+.check-mark {
+	color: green;
+}
+
+.address-template {
+	grid-area: address-template;
+}
+
+.form-control-header {
+	width: 40%;
+}
+
+.select-size {
+	width: 40% !important;
 }
